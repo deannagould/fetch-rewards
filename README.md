@@ -1,5 +1,5 @@
 # Fetch Rewards 
-Take home assessment for Fetch Rewards Analytics Engineer position.
+Take home assessment for Fetch Rewards Analytics Engineer position. The SQL queries were written in GoogleSQL. 
 
 
 ### Entity Relationship Diagram
@@ -11,18 +11,21 @@ Below is the entity relationship diagram (ERD). This ERD includes the data from 
 
 ### Business Questions
 
-##### What are the top 5 brands by receipts scanned for most recent month?
-##### How does the ranking of the top 5 brands by receipts scanned for the recent month compare to the ranking for the previous month?
+##### 1. hat are the top 5 brands by receipts scanned for most recent month?
 
-I wrote my SQL queries in GoogleSQL. For the first two questions, it is difficult to answer because the items that were included on scanned receipts in the most recent month as well as the prior month are null. Normally, I would use the [test_scanned_receipts](https://github.com/deannagould/fetch-rewards/blob/main/sql_queries/test_scanned_receipts.sql) query to return the top 5 brands by receipts scanned for most recent month. However, because of the null values I found, I generated a list of top brands in the month where they were last populated. I've included the [receipt_exploring.sql](https://github.com/deannagould/fetch-rewards/blob/main/sql_queries/receipt_exploring.sql) query to show that there were not any top brands included in scanned receipts in February or March (the most recent month).
+This question is answered below, with the second question. 
+
+##### 2. How does the ranking of the top 5 brands by receipts scanned for the recent month compare to the ranking for the previous month?
+
+For the first two questions, it is difficult to answer because the items that were included on scanned receipts in the most recent month as well as the prior month are null. Normally, I would use the [test_scanned_receipts](https://github.com/deannagould/fetch-rewards/blob/main/sql_queries/test_scanned_receipts.sql) query to return the top 5 brands by receipts scanned for most recent month. However, because of the null values I found, I generated a list of top brands in the month where they were last populated. I've included the [receipt_exploring.sql](https://github.com/deannagould/fetch-rewards/blob/main/sql_queries/receipt_exploring.sql) query to show that there were not any top brands included in scanned receipts in February or March (the most recent month).
 
 Included in the brands table is a column called `topBrand` which is a binary datatype. For this, I assumed that 1 is considered a top brand, and 0's or null values are not a top brand. This would require further clarification.
 
-##### When considering average spend from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
+##### 3. When considering average spend from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
 
 The SQL query [receipt_status.sql](https://github.com/deannagould/fetch-rewards/blob/main/sql_queries/receipt_status.sql) is what I used to answer the next two questions. For this question, I made the assumption that 'Accepted' is the same as 'Finished' because there was not an 'Accepted' `rewardsReceiptStatus`.  The average spend of items with an 'Accepted' status was $80.85, which is much greater than the $23.33 average spend from 'Rejected' receipt statuses.
 
-##### When considering total number of items purchased from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
+##### 4. When considering total number of items purchased from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
 
 Answering this question relies on the same assumption made in the previous solution. Similarly, the total quantity of 'Accepted' items was much higher than 'Rejected' 8,184 items were accepted compared to the 173 items that had a rejected receipt status. 
 
