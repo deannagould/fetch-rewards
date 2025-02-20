@@ -1,4 +1,4 @@
-# fetch-rewards
+# Fetch Rewards 
 Take home assessment for Fetch Rewards Analytics Engineer position.
 
 
