@@ -11,7 +11,7 @@ Below is the entity relationship diagram (ERD). This ERD includes the data from 
 
 ### Business Questions
 
-##### 1. hat are the top 5 brands by receipts scanned for most recent month?
+##### 1. What are the top 5 brands by receipts scanned for most recent month?
 
 This question is answered below, with the second question. 
 
